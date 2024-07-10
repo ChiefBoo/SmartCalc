@@ -3,8 +3,6 @@
 
 #include <stdlib.h>
 
-
-
 typedef enum type_t {
   NUM = 1,
   X = 2,
@@ -27,24 +25,22 @@ typedef enum type_t {
   BRACK_C = 19,
 } type_t;
 
-
-typedef struct lexeme{
+typedef struct lexeme {
   type_t type;
   int priority;
   double value;
 } Lexeme;
 
-typedef struct node{
+typedef struct node {
   Lexeme lex;
-  struct node* next;
+  struct node *next;
 } Node;
 
 void push(Node **head, type_t type, int priority, double value);
 void pop(Node **head);
-Node peek(Node **head);
+// Node peek(Node **head);
 void free_stack(Node **head);
 
-//void print_stack(Node *head); // remove before deadline
-
+// void print_stack(Node *head); // remove before deadline
 
 #endif  // SRC_BACKEND_STACK_H
